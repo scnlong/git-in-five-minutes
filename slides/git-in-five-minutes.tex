@@ -1,0 +1,127 @@
+\documentclass[aspectratio=169]{beamer}
+\geometry{paperwidth=320mm,paperheight=180mm}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{listings}
+\title{Git in five minutes}
+\subtitle{Position: IT Specialist for Linux System Administration and HPC}
+\author{Qing-Long Liu}
+\graphicspath{{slides/assets/}{assets/}}
+\definecolor{Navy}{HTML}{112D42}
+\definecolor{Teal}{HTML}{087E83}
+\definecolor{Muted}{HTML}{526978}
+\definecolor{Pale}{HTML}{EDF6F7}
+\setbeamercolor{normal text}{fg=Navy,bg=white}
+\setbeamercolor{frametitle}{fg=Navy}
+\setbeamercolor{structure}{fg=Teal}
+\setbeamerfont{normal text}{size=\fontsize{22}{29}\selectfont}
+\setbeamerfont{frametitle}{size=\fontsize{32}{38}\selectfont,series=\bfseries}
+\setbeamersize{text margin left=20mm,text margin right=20mm}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{frametitle}{\vspace{10mm}\insertframetitle\par\vspace{5mm}}
+\setbeamertemplate{footline}{%
+  \hspace{20mm}\textcolor{Muted}{\fontsize{11}{14}\selectfont Git in five minutes\hfill\insertframenumber\,/\,\inserttotalframenumber}\hspace{20mm}\vspace{6mm}}
+\setbeamertemplate{itemize item}{\textcolor{Teal}{\small\textbullet}}
+\hypersetup{pdftitle={Git in five minutes},pdfauthor={Qing-Long Liu},pdfsubject={An introduction to Git for researchers}}
+\lstset{basicstyle=\ttfamily\fontsize{18}{25}\selectfont,columns=fullflexible,keepspaces=true,showstringspaces=false,aboveskip=0pt,belowskip=0pt}
+\newcommand{\labeltext}[1]{{\color{Teal}\fontsize{13}{17}\selectfont\bfseries #1}}
+\newcommand{\smalltext}[1]{{\fontsize{18}{24}\selectfont #1}}
+\begin{document}
+\usebeamerfont{normal text}
+
+% 0:00--0:10. Brief introduction, then move straight to the motivating example.
+\begin{frame}[plain]
+\vspace{24mm}
+{\color{Navy}\bfseries\fontsize{44}{52}\selectfont Git in five minutes\par}
+\vspace{15mm}
+{\color{Teal}\fontsize{21}{29}\selectfont
+Position: IT Specialist for Linux System Administration and HPC\par}
+\vspace{19mm}
+{\color{Muted}\fontsize{15}{20}\selectfont AUTHOR\par}
+\vspace{3mm}
+{\color{Navy}\fontsize{27}{34}\selectfont Qing-Long Liu\par}
+\vfill
+\end{frame}
+
+% 0:10--0:50. Full script and source references are in presenter/speaker-notes.md.
+\begin{frame}[t]{Why version control?}
+\vspace{2mm}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.49\textwidth}
+\vspace{3mm}
+\includegraphics[width=\linewidth,height=94mm,keepaspectratio]{manuscript-drafts.png}
+\end{column}
+\begin{column}{.46\textwidth}
+\labeltext{A FAMILIAR FOLDER}\par\vspace{5mm}
+{\ttfamily\fontsize{21}{30}\selectfont
+thesis.tex\par
+thesis\_final.tex\par
+thesis\_final\_v2.tex\par
+thesis\_final\_really.tex\par}
+\vspace{7mm}
+{\fontsize{24}{31}\selectfont Which version did I send my supervisor?\par}
+\vspace{4mm}
+\smalltext{\textcolor{Muted}{What changed since then?}}
+\end{column}
+\end{columns}
+\vfill
+\textcolor{Teal}{Version control keeps a history of recorded versions.}
+\vspace{8mm}
+\end{frame}
+
+% 0:50--1:50. Explain saving, staging, and committing in that order.
+\begin{frame}[t]{How Git helps}
+\smalltext{A \textbf{repository} is your project together with its Git history.}\par
+\vspace{11mm}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.29\textwidth}
+\labeltext{1 / EDIT}\par\vspace{4mm}
+{\fontsize{26}{32}\selectfont Your files}\par\vspace{5mm}
+\smalltext{Save your changes in the editor.}
+\end{column}
+\begin{column}{.29\textwidth}
+\labeltext{2 / SELECT}\par\vspace{4mm}
+{\fontsize{26}{32}\selectfont Staging area}\par\vspace{5mm}
+\smalltext{\texttt{git add}\par Select current content for the next commit.}
+\end{column}
+\begin{column}{.29\textwidth}
+\labeltext{3 / RECORD}\par\vspace{4mm}
+{\fontsize{26}{32}\selectfont Commit}\par\vspace{5mm}
+\smalltext{\texttt{git commit}\par Record a snapshot with a message.}
+\end{column}
+\end{columns}
+\vspace{10mm}
+\textcolor{Teal}{Saving a file does not create a commit.}\par
+\vspace{3mm}
+\smalltext{Edit after \texttt{git add}? Add again to include the later edits.}\par
+\vfill
+{\color{Muted}\fontsize{16}{21}\selectfont Commits stay on your computer. An external backup is separate.}\par
+\vspace{6mm}
+\end{frame}
+
+% 1:50--4:20. Switch to the prepared terminal. Return here for the recap.
+\begin{frame}[t,fragile]{The first commit}
+\smalltext{Start in a new folder containing \texttt{manuscript.tex}.}\par
+\vspace{8mm}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.70\textwidth}
+\begin{lstlisting}
+git init
+git status
+git add manuscript.tex
+git status
+git commit -m "Record initial manuscript draft"
+git status
+git log
+\end{lstlisting}
+\end{column}
+\begin{column}{.25\textwidth}
+\labeltext{WATCH THE FILE}\par\vspace{6mm}
+\smalltext{Untracked\par\vspace{6mm}Staged\par\vspace{6mm}Committed}
+\end{column}
+\end{columns}
+\vfill
+\smalltext{\textcolor{Teal}{\texttt{status}: current state\hspace{12mm}\texttt{log}: recorded history}}\par
+\vspace{6mm}
+\end{frame}
+\end{document}
