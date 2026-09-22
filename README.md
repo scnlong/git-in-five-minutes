@@ -1,6 +1,6 @@
 # Git in five minutes
 
-An introduction to Git for researchers with slides, and a Markdown companion website. The teaching material uses `git init`, `git add`, `git commit`, `git status`, and plain `git log`. Extra commands appear only in the website's optional supplement.
+An flash introduction to Git for researchers with slides, and a Markdown companion website. The teaching material uses `git init`, `git add`, `git commit`, `git status`, and plain `git log`. Extra commands appear only in the website's optional supplement.
 
 
 ## Files at a glance

@@ -3,7 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{listings}
-\usepackage{xcolor}
+\usepackage{hyperref}
 \title{A flash introduction to Git}
 % \subtitle{Position: IT Specialist for Linux System Administration and HPC}
 \subtitle{A SHORT GUIDE FOR RESEARCHERS}
@@ -41,8 +41,8 @@
 A SHORT GUIDE FOR RESEARCHERS\par}
 \vspace{25mm}
 {\color{Navy}\fontsize{27}{34}\selectfont Qing-Long Liu\par}
-	\vspace{4mm}
-{\fontsize{24}{31}\selectfont30.09.2026\par}
+\vspace{4mm}
+{\fontsize{24}{31}\selectfont 30.09.2026\par}
 \end{frame}
 
 % 0:10--0:50. Full script and source references are in presenter/speaker-notes.md.
@@ -123,14 +123,15 @@ git log
 \end{column}
 \end{columns}
 \vfill
+\smalltext{\textcolor{Teal}{\texttt{status}: current state\hspace{12mm}\texttt{log}: recorded history}}\par
+\vspace{6mm}
 \begin{columns}[T,onlytextwidth]
 \begin{column}{.70\textwidth}
-\smalltext{\textcolor{Teal}{\texttt{status}: current state\hspace{12mm}\texttt{log}: recorded history}}\par
+\smalltext{More info: \url{https://scnlong.github.io/git-in-five-minutes/}\par}
 \end{column}
 \begin{column}{.25\textwidth}
-	\labeltext{\textcolor{red}{\LARGE{Thank you!}}}\par\vspace{6mm}
+\labeltext{\textcolor{red}{\LARGE{Thank you!}}}\par\vspace{6mm}
 \end{column}
 \end{columns}
-%\vspace{6mm}
 \end{frame}
 \end{document}
